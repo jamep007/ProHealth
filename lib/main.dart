@@ -17,7 +17,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter App with MYSQL',
       home: new myHomePage(),
-
+      routes: <String, WidgetBuilder> {
+        "/adduser" : (BuildContext context) => new AddUser(),
+        "/moduser" : (BuildContext context) => new ModifyUser(),
+        "/showusers" : (BuildContext context) => new ShowUsers(),
+      },
     );
   }
 }

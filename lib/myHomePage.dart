@@ -24,19 +24,23 @@ class _myHomePageState extends State<myHomePage> {
             new ListTile(
               title: new Text("Add User"),
               trailing: new Icon(Icons.person_add),
+              onTap: ()=> Navigator.of(context).popAndPushNamed("/adduser"),
             ),
             new ListTile(
               title: new Text("Modify User"),
               trailing: new Icon(Icons.mode_edit),
+              onTap: ()=> Navigator.of(context).popAndPushNamed("/moduser"),
             ),
             new ListTile(
               title: new Text("Show Users"),
               trailing: new Icon(Icons.person),
+              onTap: ()=> Navigator.of(context).popAndPushNamed("/showusers"),
             ),
             new Divider(),
             new ListTile(
-              title: new Text("Close App"),
+              title: new Text("Close"),
               trailing: new Icon(Icons.close),
+              onTap: ()=> Navigator.of(context).pop(),
             ),
           ]
         ),
