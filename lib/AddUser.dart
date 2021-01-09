@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -34,65 +35,77 @@ class _AddUserState extends State<AddUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Register"),),
+      appBar: AppBar(
+        title: Text("Register User"),
+        backgroundColor: Colors.red,
+        elevation: defaultTargetPlatform == TargetPlatform.android ? 5.0 : 0.0,
+      ),
       body: Container(
         child: Center(
-          child: Column(
-            children: <Widget>[
-              Text("Name",style: TextStyle(fontSize: 18.0),),
-              TextField(
-                controller: name,
-                decoration: InputDecoration(
-                    hintText: 'name'
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              children: <Widget>[
+                Text("Name",style: TextStyle(fontSize: 18.0),),
+                TextField(
+                  controller: name,
+                  decoration: InputDecoration(
+                      hintText: 'name'
+                  ),
                 ),
-              ),
-              Text("User_ID",style: TextStyle(fontSize: 18.0),),
-              TextField(
-                controller: userId,
-                decoration: InputDecoration(
-                    hintText: 'User_ID'
+                SizedBox(height: 16.0),
+                Text("User_ID",style: TextStyle(fontSize: 18.0),),
+                TextField(
+                  controller: userId,
+                  decoration: InputDecoration(
+                      hintText: 'User_ID'
+                  ),
                 ),
-              ),
-              Text("Username",style: TextStyle(fontSize: 18.0),),
-              TextField(
-                controller: username,
-                decoration: InputDecoration(
-                    hintText: 'Username'
+                SizedBox(height: 16.0),
+                Text("Username",style: TextStyle(fontSize: 18.0),),
+                TextField(
+                  controller: username,
+                  decoration: InputDecoration(
+                      hintText: 'Username'
+                  ),
                 ),
-              ),
-              Text("Password",style: TextStyle(fontSize: 18.0),),
-              TextField(
-                controller: password,
-                decoration: InputDecoration(
-                    hintText: 'password'
+                SizedBox(height: 16.0),
+                Text("Password",style: TextStyle(fontSize: 18.0),),
+                TextField(
+                  controller: password,
+                  decoration: InputDecoration(
+                      hintText: 'password'
+                  ),
                 ),
-              ),
-              Text("Phone",style: TextStyle(fontSize: 18.0),),
-              TextField(
-                controller: phone,
-                decoration: InputDecoration(
-                    hintText: 'Phone'
+                SizedBox(height: 16.0),
+                Text("Phone",style: TextStyle(fontSize: 18.0),),
+                TextField(
+                  controller: phone,
+                  decoration: InputDecoration(
+                      hintText: 'Phone'
+                  ),
                 ),
-              ),
-              Text("Email",style: TextStyle(fontSize: 18.0),),
-              TextField(
-                controller: email,
-                decoration: InputDecoration(
-                    hintText: 'Email'
+                SizedBox(height: 16.0),
+                Text("Email",style: TextStyle(fontSize: 18.0),),
+                TextField(
+                  controller: email,
+                  decoration: InputDecoration(
+                      hintText: 'Email'
+                  ),
                 ),
-              ),
 
 
-              RaisedButton(
-                child: Text("Register"),
-                onPressed: (){
-                  senddata();
-                },
-              ),
+                RaisedButton(
+                  child: Text("Register"),
+                  onPressed: (){
+                    senddata();
+                  },
+                ),
 
 
 
-            ],
+              ],
+            ),
           ),
         ),
       ),
