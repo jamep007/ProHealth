@@ -11,23 +11,22 @@ class AddUser extends StatefulWidget {
 }
 
 class _AddUserState extends State<AddUser> {
-
-  TextEditingController name=new TextEditingController();
-  TextEditingController userId=new TextEditingController();
-  TextEditingController username=new TextEditingController();
-  TextEditingController password=new TextEditingController();
-  TextEditingController phone=new TextEditingController();
-  TextEditingController email=new TextEditingController();
+  TextEditingController name = new TextEditingController();
+  TextEditingController userId = new TextEditingController();
+  TextEditingController username = new TextEditingController();
+  TextEditingController password = new TextEditingController();
+  TextEditingController phone = new TextEditingController();
+  TextEditingController email = new TextEditingController();
 
   Future<List> senddata() async {
-    final response = await http.post("http://DESKTOP-4KOSN6V/CSFinalProject/insertuser.php", body: {
+    final response = await http
+        .post("http://DESKTOP-4KOSN6V/CSFinalProject/insertuser.php", body: {
       "name": name.text,
       "user_id": userId.text,
       "username": username.text,
       "password": password.text,
       "phone": phone.text,
       "email": email.text,
-
     });
     return Future.delayed(Duration(seconds: 0));
   }
@@ -46,64 +45,65 @@ class _AddUserState extends State<AddUser> {
             padding: EdgeInsets.all(16.0),
             child: Column(
               children: <Widget>[
-                Text("Name",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Name",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: name,
-                  decoration: InputDecoration(
-                      hintText: 'name'
-                  ),
+                  decoration: InputDecoration(hintText: 'name'),
                 ),
                 SizedBox(height: 16.0),
-                Text("User_ID",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "User_ID",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: userId,
-                  decoration: InputDecoration(
-                      hintText: 'User_ID'
-                  ),
+                  decoration: InputDecoration(hintText: 'User_ID'),
                 ),
                 SizedBox(height: 16.0),
-                Text("Username",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Username",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: username,
-                  decoration: InputDecoration(
-                      hintText: 'Username'
-                  ),
+                  decoration: InputDecoration(hintText: 'Username'),
                 ),
                 SizedBox(height: 16.0),
-                Text("Password",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Password",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: password,
-                  decoration: InputDecoration(
-                      hintText: 'password'
-                  ),
+                  decoration: InputDecoration(hintText: 'password'),
                 ),
                 SizedBox(height: 16.0),
-                Text("Phone",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Phone",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: phone,
-                  decoration: InputDecoration(
-                      hintText: 'Phone'
-                  ),
+                  decoration: InputDecoration(hintText: 'Phone'),
                 ),
                 SizedBox(height: 16.0),
-                Text("Email",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Email",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: email,
-                  decoration: InputDecoration(
-                      hintText: 'Email'
-                  ),
+                  decoration: InputDecoration(hintText: 'Email'),
                 ),
-
-
                 RaisedButton(
                   child: Text("Register"),
-                  onPressed: (){
+                  onPressed: () {
                     senddata();
                   },
                 ),
-
-
-
               ],
             ),
           ),

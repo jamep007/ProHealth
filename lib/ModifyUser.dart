@@ -11,31 +11,30 @@ class ModifyUser extends StatefulWidget {
 }
 
 class _ModifyUserState extends State<ModifyUser> {
-  
-  TextEditingController name=new TextEditingController();
-  TextEditingController userId=new TextEditingController();
-  TextEditingController username=new TextEditingController();
-  TextEditingController password=new TextEditingController();
-  TextEditingController phone=new TextEditingController();
-  TextEditingController email=new TextEditingController();
-  
-   Future<List> senddata() async {
-    final response = await http.post("http://DESKTOP-4KOSN6V/CSFinalProject/modifyuser.php", body: {
+  TextEditingController name = new TextEditingController();
+  TextEditingController userId = new TextEditingController();
+  TextEditingController username = new TextEditingController();
+  TextEditingController password = new TextEditingController();
+  TextEditingController phone = new TextEditingController();
+  TextEditingController email = new TextEditingController();
+
+  Future<List> senddata() async {
+    final response = await http
+        .post("http://DESKTOP-4KOSN6V/CSFinalProject/modifyuser.php", body: {
       "name": name.text,
       "user_id": userId.text,
       "username": username.text,
       "password": password.text,
       "phone": phone.text,
       "email": email.text,
-
     });
 
     if (response.statusCode == 200) {
-    return jsonDecode(response.body);
-  } else {
-    print(response.statusCode);
-    throw Exception('Failed');
-  }
+      return jsonDecode(response.body);
+    } else {
+      print(response.statusCode);
+      throw Exception('Failed');
+    }
 
     //return Future.delayed(Duration(seconds: 0));
   }
@@ -54,65 +53,69 @@ class _ModifyUserState extends State<ModifyUser> {
             padding: EdgeInsets.all(16.0),
             child: Column(
               children: <Widget>[
-                Text("User_ID",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "User_ID",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: userId,
-                  decoration: InputDecoration(
-                      hintText: 'User_ID of user to modify'
-                  ),
+                  decoration:
+                      InputDecoration(hintText: 'User_ID of user to modify'),
                 ),
                 SizedBox(height: 16.0),
-                Text("Name",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Name",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: name,
-                  decoration: InputDecoration(
-                      hintText: 'Modified name'
-                  ),
+                  decoration: InputDecoration(hintText: 'Modified name'),
                 ),
                 SizedBox(height: 16.0),
-                Text("Username",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Username",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: username,
-                  decoration: InputDecoration(
-                      hintText: 'Modified username'
-                  ),
+                  decoration: InputDecoration(hintText: 'Modified username'),
                 ),
                 SizedBox(height: 16.0),
-                Text("Password",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Password",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: password,
-                  decoration: InputDecoration(
-                      hintText: 'Modified password'
-                  ),
+                  decoration: InputDecoration(hintText: 'Modified password'),
                 ),
                 SizedBox(height: 16.0),
-                Text("Phone",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Phone",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: phone,
-                  decoration: InputDecoration(
-                      hintText: 'Modified phone number'
-                  ),
+                  decoration:
+                      InputDecoration(hintText: 'Modified phone number'),
                 ),
                 SizedBox(height: 16.0),
-                Text("Email",style: TextStyle(fontSize: 18.0),),
+                Text(
+                  "Email",
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextField(
                   controller: email,
-                  decoration: InputDecoration(
-                      hintText: 'Modified email address'
-                  ),
+                  decoration:
+                      InputDecoration(hintText: 'Modified email address'),
                 ),
-
-
                 RaisedButton(
                   child: Text("Update"),
-                  onPressed: (){
+                  onPressed: () {
                     final response = senddata();
                     print(response);
                   },
                 ),
-
-
-
               ],
             ),
           ),
