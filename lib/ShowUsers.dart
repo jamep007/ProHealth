@@ -36,67 +36,77 @@ class _ShowUsersState extends State<ShowUsers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Show All Users Page"),
-        backgroundColor: Colors.red,
-        elevation: defaultTargetPlatform == TargetPlatform.android ? 5.0 : 0.0,
-      ),
-      body: ListView.builder(
-          itemCount: data.length,
-          itemBuilder: (BuildContext context, int index) => Card(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Name'),
-                      SizedBox(height: 16),
-                      Text(data[index]['Name']),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('User_ID'),
-                      SizedBox(height: 16),
-                      Text(data[index]['User_ID']),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Username'),
-                      SizedBox(height: 16),
-                      Text(data[index]['Username']),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Password'),
-                      SizedBox(height: 16),
-                      Text(data[index]['Password']),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Phone'),
-                      SizedBox(height: 16),
-                      Text(data[index]['Phone']),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Email'),
-                      SizedBox(height: 16),
-                      Text(data[index]['Email']),
-                    ],
-                  ),
-                ],
-              ))),
-    );
+        appBar: AppBar(
+          title: Text("Show All Users Page"),
+          backgroundColor: Colors.red,
+          elevation:
+              defaultTargetPlatform == TargetPlatform.android ? 5.0 : 0.0,
+        ),
+        body: ListView(children: <Widget>[
+          Container(
+            height: 40,
+            color: Colors.white,
+            child: Center(
+              child: Text(
+                'Header',
+                style: TextStyle(color: Colors.black, fontSize: 16),
+              ),
+            ),
+          ),
+
+          //TODO: Make ListView work. It has something to do with sizing.
+
+          ListView.builder(
+            itemCount: data.length,
+            itemBuilder: (BuildContext context, int index) => Card(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 16),
+                    Text(data[index]['Name']),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 16),
+                    Text(data[index]['User_ID']),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 16),
+                    Text(data[index]['Username']),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 16),
+                    Text(data[index]['Password']),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 16),
+                    Text(data[index]['Phone']),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 16),
+                    Text(data[index]['Email']),
+                  ],
+                ),
+              ],
+            )),
+          )
+        ]));
   }
 }
