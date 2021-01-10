@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
 
 class ShowUsers extends StatefulWidget {
@@ -42,65 +43,106 @@ class _ShowUsersState extends State<ShowUsers> {
           elevation:
               defaultTargetPlatform == TargetPlatform.android ? 5.0 : 0.0,
         ),
-        body: ListView(children: <Widget>[
+        body: ListView(scrollDirection: Axis.horizontal, children: <Widget>[
           Container(
             height: 40,
             color: Colors.white,
             child: Center(
-              child: Text(
-                'Header',
-                style: TextStyle(color: Colors.black, fontSize: 16),
-              ),
-            ),
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  'Name',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'User_ID',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'Username',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'Password',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'Phone',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'Email',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            )),
           ),
-
-          //TODO: Make ListView work. It has something to do with sizing.
-
           ListView.builder(
+            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
             itemCount: data.length,
             itemBuilder: (BuildContext context, int index) => Card(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Column(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(width: 16),
                     Text(data[index]['Name']),
                   ],
                 ),
-                Column(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(width: 16),
                     Text(data[index]['User_ID']),
                   ],
                 ),
-                Column(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(width: 16),
                     Text(data[index]['Username']),
                   ],
                 ),
-                Column(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(width: 16),
                     Text(data[index]['Password']),
                   ],
                 ),
-                Column(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(width: 16),
                     Text(data[index]['Phone']),
                   ],
                 ),
-                Column(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(width: 16),
                     Text(data[index]['Email']),
                   ],
                 ),
