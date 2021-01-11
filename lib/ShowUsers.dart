@@ -12,6 +12,7 @@ class ShowUsers extends StatefulWidget {
 }
 
 class _ShowUsersState extends State<ShowUsers> {
+  String userId;
   List data = [];
 
   @override
@@ -34,6 +35,14 @@ class _ShowUsersState extends State<ShowUsers> {
     }
   }
 
+  void requestUserDel() async {
+    final response = await http
+        .post('http://DESKTOP-4KOSN6V/CSFinalProject/dropuser.php', body: {
+      'user_id': userId,
+    });
+    return Future.delayed(Duration(seconds: 0));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,110 +54,146 @@ class _ShowUsersState extends State<ShowUsers> {
         ),
         body: ListView(scrollDirection: Axis.horizontal, children: <Widget>[
           Container(
-            height: 40,
             color: Colors.white,
             child: Center(
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  'Name',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text(
+                    'Name',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
-                Text(
-                  'User_ID',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text(
+                    'User_ID',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
-                Text(
-                  'Username',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text(
+                    'Username',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
-                Text(
-                  'Password',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text(
+                    'Password',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
-                Text(
-                  'Phone',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text(
+                    'Phone',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
-                Text(
-                  'Email',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text(
+                    'Email',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             )),
           ),
+          Container(
+            height: double.infinity,
+            width: 2,
+            color: Colors.black,
+          ),
           ListView.builder(
-            scrollDirection: Axis.horizontal,
-            shrinkWrap: true,
-            itemCount: data.length,
-            itemBuilder: (BuildContext context, int index) => Card(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 16),
-                    Text(data[index]['Name']),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 16),
-                    Text(data[index]['User_ID']),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 16),
-                    Text(data[index]['Username']),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 16),
-                    Text(data[index]['Password']),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 16),
-                    Text(data[index]['Phone']),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 16),
-                    Text(data[index]['Email']),
-                  ],
-                ),
-              ],
-            )),
-          )
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: data.length,
+              itemBuilder: (BuildContext context, int index) => Card(
+                    child: InkWell(
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (_) {
+                                return AlertDialog(
+                                  title: Text('Delete User?'),
+                                  actions: [
+                                    FlatButton(
+                                      onPressed: () => Navigator.pop(
+                                          context, false), // passing false
+                                      child: Text('No'),
+                                    ),
+                                    FlatButton(
+                                      onPressed: () => Navigator.pop(
+                                          context, true), // passing true
+                                      child: Text('Yes'),
+                                    ),
+                                  ],
+                                );
+                              }).then((exit) {
+                            if (exit == null) return;
+
+                            if (exit) {
+                              // user pressed Yes button\
+                              userId = data[index]['User_ID'];
+                              requestUserDel();
+                            }
+                          });
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              child: (Text(data[index]['Name'])),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              child: (Text(data[index]['User_ID'])),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              child: (Text(data[index]['Username'])),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              child: (Text(data[index]['Password'])),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              child: (Text(data[index]['Phone'])),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              child: (Text(data[index]['Email'])),
+                            ),
+                          ],
+                        )),
+                  ))
         ]));
   }
 }

@@ -28,15 +28,7 @@ class _ModifyUserState extends State<ModifyUser> {
       "phone": phone.text,
       "email": email.text,
     });
-
-    if (response.statusCode == 200) {
-      return jsonDecode(response.body);
-    } else {
-      print(response.statusCode);
-      throw Exception('Failed');
-    }
-
-    //return Future.delayed(Duration(seconds: 0));
+    return Future.delayed(Duration(seconds: 0));
   }
 
   @override
