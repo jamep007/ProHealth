@@ -1,4 +1,4 @@
-# senior_project_swauhealthapp
+# senior_project_prohealth
 
 A new Flutter application.
 
