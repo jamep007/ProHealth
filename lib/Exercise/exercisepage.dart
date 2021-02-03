@@ -4,18 +4,18 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class myHomePage extends StatefulWidget {
+class ExercisePage extends StatefulWidget {
   @override
-  _myHomePageState createState() => _myHomePageState();
+  _ExercisePageState createState() => _ExercisePageState();
 }
 
-class _myHomePageState extends State<myHomePage> {
+class _ExercisePageState extends State<ExercisePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text("My Home Page"),
+        title: Text("Exercise Page"),
       ),
       body: Container(),
     );
