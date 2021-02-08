@@ -14,9 +14,14 @@ class _SleepPageState extends State<SleepPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text("Sleep Page"),
-      ),
+          title: Text("Sleep Page"),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: <Color>[Colors.lightBlue, Colors.blue])),
+          )),
       body: Container(),
     );
   }

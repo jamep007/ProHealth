@@ -14,9 +14,14 @@ class _SocialPageState extends State<SocialPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text("Social Page"),
-      ),
+          title: Text("Social Page"),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: <Color>[Colors.lightBlue, Colors.blue])),
+          )),
       body: Container(),
     );
   }

@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:senior_project_swauhealthapp/appdrawer.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -14,9 +15,15 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text("Profile Page"),
-      ),
+          title: Text("Profile Page"),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: <Color>[Colors.lightBlue, Colors.blue])),
+          )),
+      drawer: AppDrawer(),
       body: Container(),
     );
   }

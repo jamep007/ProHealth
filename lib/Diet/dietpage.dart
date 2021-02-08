@@ -14,9 +14,14 @@ class _DietPageState extends State<DietPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text("Diet Page"),
-      ),
+          title: Text("Diet Page"),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: <Color>[Colors.lightBlue, Colors.blue])),
+          )),
       body: Container(),
     );
   }

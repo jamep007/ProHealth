@@ -14,9 +14,14 @@ class _MHealthPageState extends State<MHealthPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text("Mental Health Page"),
-      ),
+          title: Text("Mental Health Page"),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: <Color>[Colors.lightBlue, Colors.blue])),
+          )),
       body: Container(),
     );
   }

@@ -1,9 +1,9 @@
 <?php
 
-$username = "sql3390587";
-$password = "hc7p9AA9BQ";
-$host = "sql3.freesqldatabase.com";
-$db_name = "sql3390587";
+$username = "id16094632_prohealthadmin";
+$password = "-]nE3m5L-xaKaW>@";
+$host = "localhost";
+$db_name = "id16094632_prohealthdb";
 
 $connect = mysqli_connect($host, $username, $password, $db_name);
 
