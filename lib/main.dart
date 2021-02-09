@@ -22,6 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter App with MYSQL',
       home: new myHomePage(),
       routes: <String, WidgetBuilder>{
+        "/login": (BuildContext context) => new myHomePage(),
+        "/signup": (BuildContext context) => new myHomePage(),
         "/profile": (BuildContext context) => new ProfilePage(),
         "/social": (BuildContext context) => new SocialPage(),
         "/exercise": (BuildContext context) => new ExercisePage(),

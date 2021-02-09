@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:senior_project_swauhealthapp/appdrawer.dart';
 
 class ExercisePage extends StatefulWidget {
   @override
@@ -23,6 +24,7 @@ class _ExercisePageState extends State<ExercisePage> {
                     colors: <Color>[Colors.lightBlue, Colors.blue])),
           )),
       body: Container(),
+      drawer: AppDrawer(),
     );
   }
 }

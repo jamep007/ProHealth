@@ -5,8 +5,9 @@ class AppDrawer extends StatefulWidget {
   _AppDrawerState createState() => _AppDrawerState();
 }
 
+int _index = 0;
+
 class _AppDrawerState extends State<AppDrawer> {
-  int _index = 0;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -34,7 +35,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   ),
                   Text(
                     'Username',
-                    style: TextStyle(color: Colors.white, fontSize: 25.0),
+                    style: TextStyle(color: Colors.white, fontSize: 20.0),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -187,6 +188,12 @@ class _AppDrawerState extends State<AppDrawer> {
           title: new Text("Close"),
           trailing: new Icon(Icons.close),
           onTap: () => Navigator.of(context).pop(),
+        ),
+        ListTile(
+          title: new Text("Log Out"),
+          trailing: new Icon(Icons.logout),
+          onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
+              "/login", (Route<dynamic> route) => false),
         ),
       ]),
     );
