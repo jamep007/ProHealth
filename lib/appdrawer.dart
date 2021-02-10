@@ -43,56 +43,59 @@ class _AppDrawerState extends State<AppDrawer> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FlatButton(
-                        //color: Colors.lightBlue,
-                        padding: EdgeInsets.only(
-                            top: 5, bottom: 5, left: 20, right: 20),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.person,
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              width: 4,
-                            ),
-                            Text(
-                              "My Profile",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        onPressed: () =>
-                            Navigator.of(context).popAndPushNamed("/profile"),
-                      ),
+                          //color: Colors.lightBlue,
+                          padding: EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 20),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.person,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 4,
+                              ),
+                              Text(
+                                "My Profile",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
+                            _index = 0;
+                            Navigator.of(context).popAndPushNamed("/profile");
+                          }),
                       Text(
                         "|",
                         style: TextStyle(color: Colors.white),
                       ),
                       FlatButton(
-                        //color: Colors.lightBlue,
-                        padding: EdgeInsets.only(
-                            top: 5, bottom: 5, left: 20, right: 20),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.settings,
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              width: 4,
-                            ),
-                            Text(
-                              "Settings",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    ProfilePage(passedIndex: 3))),
-                      ),
+                          //color: Colors.lightBlue,
+                          padding: EdgeInsets.only(
+                              top: 5, bottom: 5, left: 20, right: 20),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.settings,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 4,
+                              ),
+                              Text(
+                                "Settings",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
+                            _index = 0;
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ProfilePage(passedIndex: 3)));
+                          }),
                     ],
                   ),
                 ],

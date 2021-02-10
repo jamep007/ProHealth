@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:senior_project_swauhealthapp/Auth/auth.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -10,6 +11,13 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  TextEditingController name = new TextEditingController();
+  TextEditingController username = new TextEditingController();
+  TextEditingController password = new TextEditingController();
+  TextEditingController confirm = new TextEditingController();
+  TextEditingController phone = new TextEditingController();
+  TextEditingController email = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +56,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           height: 40,
                         ),
                         TextField(
+                          controller: name,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: "Full Name",
@@ -57,6 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           height: 10,
                         ),
                         TextField(
+                          controller: username,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: "Username",
@@ -70,6 +80,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           height: 10,
                         ),
                         TextField(
+                          controller: password,
                           obscureText: true,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
@@ -80,6 +91,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           height: 10,
                         ),
                         TextField(
+                          controller: confirm,
                           obscureText: true,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
@@ -94,6 +106,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           height: 10,
                         ),
                         TextField(
+                          controller: phone,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: "Phone",
@@ -103,6 +116,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           height: 10,
                         ),
                         TextField(
+                          controller: email,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: "Email",
@@ -118,6 +132,8 @@ class _SignUpPageState extends State<SignUpPage> {
                             style: TextStyle(fontSize: 15, color: Colors.white),
                           ),
                           onPressed: () {
+                            userSignUp(name.text, username.text, password.text,
+                                confirm.text, phone.text, email.text);
                             Navigator.of(context).popAndPushNamed("/profile");
                           },
                         ),
