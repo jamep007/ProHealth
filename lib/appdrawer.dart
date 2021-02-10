@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:senior_project_swauhealthapp/Profile/profileChallenge.dart';
+import 'package:senior_project_swauhealthapp/Profile/profilepage.dart';
 
 class AppDrawer extends StatefulWidget {
   @override
@@ -85,8 +87,11 @@ class _AppDrawerState extends State<AppDrawer> {
                             ),
                           ],
                         ),
-                        onPressed: () =>
-                            Navigator.of(context).popAndPushNamed("/profile"),
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    ProfilePage(passedIndex: 3))),
                       ),
                     ],
                   ),

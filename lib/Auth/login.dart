@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:senior_project_swauhealthapp/appdrawer.dart';
 
-class myHomePage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  _myHomePageState createState() => _myHomePageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _myHomePageState extends State<myHomePage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +58,7 @@ class _myHomePageState extends State<myHomePage> {
                           height: 10,
                         ),
                         TextField(
+                          obscureText: true,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: "Password",
@@ -82,7 +83,10 @@ class _myHomePageState extends State<myHomePage> {
                                 "Sign up for ProHealth",
                                 style: TextStyle(color: Colors.blue),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .popAndPushNamed("/signup");
+                              },
                             ),
                           ],
                         ),
