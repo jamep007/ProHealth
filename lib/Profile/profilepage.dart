@@ -74,6 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
         ],
+        unselectedItemColor: Colors.grey[800],
         fixedColor: Colors.blue,
       ),
     );
