@@ -16,7 +16,7 @@ import 'package:senior_project_swauhealthapp/MentalHealth/mhealthpage.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-  final int _profileIndex = 0;
+  final int _profileIndex = 0, _socialIndex = 0;
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -29,7 +29,9 @@ class MyApp extends StatelessWidget {
         "/profile": (BuildContext context) => new ProfilePage(
               passedIndex: _profileIndex,
             ),
-        "/social": (BuildContext context) => new SocialPage(),
+        "/social": (BuildContext context) => new SocialPage(
+              passedIndex: _socialIndex,
+            ),
         "/exercise": (BuildContext context) => new ExercisePage(),
         "/diet": (BuildContext context) => new DietPage(),
         "/sleep": (BuildContext context) => new SleepPage(),
