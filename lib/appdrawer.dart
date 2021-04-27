@@ -140,10 +140,10 @@ class _AppDrawerState extends State<AppDrawer> {
         ListTile(
           title: _index == 3
               ? Text(
-                  "Diet",
+                  "Nutrition",
                   style: TextStyle(color: Colors.blue),
                 )
-              : Text("Diet"),
+              : Text("Nutrition"),
           trailing: _index == 3
               ? Icon(
                   Icons.restaurant,

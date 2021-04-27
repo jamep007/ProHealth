@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:senior_project_swauhealthapp/Diet/add_food.dart';
 
 import 'package:senior_project_swauhealthapp/auth/login.dart';
 import 'package:senior_project_swauhealthapp/auth/signup.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
             ),
         "/exercise": (BuildContext context) => new ExercisePage(),
         "/diet": (BuildContext context) => new DietPage(),
+        "/addfood": (BuildContext context) => new AddFoodPage(),
         "/sleep": (BuildContext context) => new SleepPage(),
         "/mhealth": (BuildContext context) => new MHealthPage(),
       },

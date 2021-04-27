@@ -6,7 +6,6 @@ import 'package:http/http.dart' as http;
 import 'package:senior_project_swauhealthapp/appdrawer.dart';
 import 'package:senior_project_swauhealthapp/Social/view_messages.dart';
 import 'package:senior_project_swauhealthapp/Social/posts.dart';
-import 'package:senior_project_swauhealthapp/Social/notifications.dart';
 
 class SocialPage extends StatefulWidget {
   final int passedIndex;
@@ -22,14 +21,13 @@ class _SocialPageState extends State<SocialPage> {
   final List<Widget> _pageTabs = [
     ViewMessages(),
     Posts(),
-    Notifications(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("Social Page"),
+          title: Text("Social"),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -55,13 +53,6 @@ class _SocialPageState extends State<SocialPage> {
             icon: Icon(Icons.article_rounded),
             title: Text(
               "Posts",
-              textAlign: TextAlign.center,
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            title: Text(
-              "Notifications",
               textAlign: TextAlign.center,
             ),
           ),

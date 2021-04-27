@@ -31,6 +31,8 @@ Future<int> addNewUser(String name, String username, String password,
       "email": email,
     });
 
+    var token = jsonDecode(response.body);
+
     if (response.statusCode == 200) {
       responseCode = 2; //Passwords match & successfully submitted
     } else {
@@ -40,11 +42,7 @@ Future<int> addNewUser(String name, String username, String password,
     }
 
     //Store user info for login
-    if (responseCode == 3) {
-      secureStorage.writeSecureData('user_id', _userId);
-      secureStorage.writeSecureData('username', username);
-      secureStorage.writeSecureData('password', password);
-    }
+    if (responseCode == 3) secureStorage.writeSecureData('token', token);
 
     return responseCode;
   }
@@ -59,6 +57,10 @@ Future<int> userTryLogin(String username, String password) async {
     "password": password,
   });
 
+  //Create token
+  var token = jsonDecode(response.body);
+
+  //Check status code
   if (response.statusCode == 200) {
     print(response.statusCode);
   } else {
@@ -67,9 +69,7 @@ Future<int> userTryLogin(String username, String password) async {
   }
 
   //Store user info for login
-  //secureStorage.writeSecureData('user_id', _userId);
-  secureStorage.writeSecureData('username', username);
-  secureStorage.writeSecureData('password', password);
+  secureStorage.writeSecureData('token', token);
 
   return responseCode;
 }
