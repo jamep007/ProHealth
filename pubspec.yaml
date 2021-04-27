@@ -25,12 +25,22 @@ dependencies:
     sdk: flutter
   http: ^0.12.2
   flutter_secure_storage: ^3.3.5
+<<<<<<< HEAD
   intl: ^0.17.0
   flappy_search_bar: ^1.4.1
+=======
+  fl_chart: ^0.10.1
+>>>>>>> 3731a2c6dbc1c6c8536c6feaaf7adc25086fc8f7
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
+  flutter_sparkline: "^0.1.0"
+  flutter_staggered_grid_view: "^0.2.5"
+  flutter_circular_chart: ^0.1.0
+  font_awesome_flutter: ^8.2.0
+  charts_flutter: ^0.6.0
+
 
 dev_dependencies:
   flutter_test:

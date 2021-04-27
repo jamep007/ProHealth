@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Need an account?"),
+                            Text("New to ProHealth?"),
                             FlatButton(
                               child: Text(
                                 "Sign up for ProHealth",
