@@ -158,36 +158,18 @@ class _AppDrawerState extends State<AppDrawer> {
         ListTile(
           title: _index == 4
               ? Text(
-                  "Sleep",
-                  style: TextStyle(color: Colors.blue),
-                )
-              : Text("Sleep"),
-          trailing: _index == 4
-              ? Icon(
-                  Icons.bedtime,
-                  color: Colors.blue,
-                )
-              : Icon(Icons.bedtime),
-          onTap: () {
-            _index = 4;
-            Navigator.of(context).popAndPushNamed("/sleep");
-          },
-        ),
-        ListTile(
-          title: _index == 5
-              ? Text(
                   "Mental Health",
                   style: TextStyle(color: Colors.blue),
                 )
               : Text("Mental Health"),
-          trailing: _index == 5
+          trailing: _index == 4
               ? Icon(
                   Icons.sentiment_very_satisfied,
                   color: Colors.blue,
                 )
               : Icon(Icons.sentiment_very_satisfied),
           onTap: () {
-            _index = 5;
+            _index = 4;
             Navigator.of(context).popAndPushNamed("/mhealth");
           },
         ),
