@@ -29,23 +29,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
-<<<<<<< HEAD
-=======
   charts_common:
     dependency: transitive
     description:
       name: charts_common
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.0"
+    version: "0.10.0"
   charts_flutter:
     dependency: "direct main"
     description:
       name: charts_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.0"
->>>>>>> 3731a2c6dbc1c6c8536c6feaaf7adc25086fc8f7
+    version: "0.10.0"
   clock:
     dependency: transitive
     description:
@@ -66,14 +63,14 @@ packages:
       name: cupertino_icons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.0.2"
   equatable:
     dependency: transitive
     description:
       name: equatable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.6"
+    version: "2.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -81,23 +78,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
-<<<<<<< HEAD
-  flappy_search_bar:
-    dependency: "direct main"
-    description:
-      name: flappy_search_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.4.1"
-=======
   fl_chart:
     dependency: "direct main"
     description:
       name: fl_chart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.1"
->>>>>>> 3731a2c6dbc1c6c8536c6feaaf7adc25086fc8f7
+    version: "0.35.0"
+  flappy_search_bar:
+    dependency: "direct main"
+    description:
+      name: flappy_search_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.7.2"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -117,10 +111,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.3.5"
-<<<<<<< HEAD
-  flutter_staggered_grid_view:
-    dependency: transitive
-=======
   flutter_sparkline:
     dependency: "direct main"
     description:
@@ -130,16 +120,11 @@ packages:
     version: "0.1.0"
   flutter_staggered_grid_view:
     dependency: "direct main"
->>>>>>> 3731a2c6dbc1c6c8536c6feaaf7adc25086fc8f7
     description:
       name: flutter_staggered_grid_view
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.3.4"
-=======
-    version: "0.2.7"
->>>>>>> 3731a2c6dbc1c6c8536c6feaaf7adc25086fc8f7
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -167,27 +152,19 @@ packages:
     source: hosted
     version: "3.1.4"
   intl:
-<<<<<<< HEAD
     dependency: "direct main"
-=======
-    dependency: transitive
->>>>>>> 3731a2c6dbc1c6c8536c6feaaf7adc25086fc8f7
     description:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.17.0"
-=======
-    version: "0.15.8"
   logging:
     dependency: transitive
     description:
       name: logging
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.4"
->>>>>>> 3731a2c6dbc1c6c8536c6feaaf7adc25086fc8f7
+    version: "1.0.1"
   matcher:
     dependency: transitive
     description:
@@ -209,30 +186,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-<<<<<<< HEAD
-=======
-  path_drawing:
-    dependency: transitive
-    description:
-      name: path_drawing
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.1+1"
-  path_parsing:
-    dependency: transitive
-    description:
-      name: path_parsing
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.4"
->>>>>>> 3731a2c6dbc1c6c8536c6feaaf7adc25086fc8f7
   pedantic:
     dependency: transitive
     description:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.2"
+    version: "1.11.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -295,5 +255,5 @@ packages:
     source: hosted
     version: "2.1.0"
 sdks:
-  dart: ">=2.12.0-0.0 <3.0.0"
+  dart: ">=2.12.0 <3.0.0"
   flutter: ">=1.20.0"
