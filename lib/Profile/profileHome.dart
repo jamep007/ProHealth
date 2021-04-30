@@ -23,15 +23,15 @@ class _ProfileHomeState extends State<ProfileHome> {
                 height: MediaQuery.of(context).size.height / 3,
                 fit: BoxFit.cover,
                 image: NetworkImage(
-                    'https://www.solidbackgrounds.com/images/950x350/950x350-black-solid-color-background.jpg'),
+                    'https://www.solidbackgrounds.com/images/3840x2160/3840x2160-dark-gray-solid-color-background.jpg'),
               ),
               Positioned(
                 bottom: -60.0,
                 child: CircleAvatar(
-                  radius: 72,
+                  radius: 75,
                   backgroundColor: Colors.white,
                   backgroundImage: NetworkImage(
-                      'https://icons-for-free.com/iconfiles/png/512/human+person+user+icon-1320196276306824343.png'),
+                      'https://t3.ftcdn.net/jpg/00/64/67/80/360_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpg'),
                 ),
               )
             ]),
