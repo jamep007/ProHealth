@@ -100,7 +100,7 @@ final _formKey = GlobalKey<FormState>();
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     ScaffoldMessenger.of(context)
-                    .showSnackBar(SnackBar(content: Text('Submitted!')));
+                    .showSnackBar(SnackBar(content: Text('Survey Submitted!')));
                   }
                 }, child: Text('Submit'),
               ),
