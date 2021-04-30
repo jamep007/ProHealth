@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:senior_project_swauhealthapp/appdrawer.dart';
-import 'surveymodel.dart';
+import 'survey.dart';
 
 
 class MHealthPage extends StatefulWidget {
