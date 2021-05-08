@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:senior_project_swauhealthapp/appdrawer.dart';
 
-final List<String> emotions = ['Happy', 'Sad', 'Angry', 'Depressed', 'Anxious'
-];
+final List<String> emotions = ['Happy', 'Sad', 'Angry', 'Depressed', 'Anxious'];
 
 final _formKey = GlobalKey<FormState>();
   
