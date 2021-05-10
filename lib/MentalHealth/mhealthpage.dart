@@ -15,7 +15,7 @@ class MHealthPage extends StatefulWidget {
 
   
 }
-bool hasDoneSurvey = true;
+bool hasDoneSurvey = false;
 class _MHealthPageState extends State<MHealthPage> {
 
 
