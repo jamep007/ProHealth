@@ -23,17 +23,17 @@ $query = "INSERT INTO users( User_ID, Name, Username, Password, Phone, Email)
 
 $results = mysqli_query($connect, $query);
 
-if (!$results = 0) {
+/*if (!$results = 0) {
     echo "User added successfully.";
 } else if ($results = 0) {
     echo "<br>The query failed.";
-}
+}*/
 
 // Create token header as a JSON string
 $header = json_encode(['typ' => 'JWT', 'alg' => 'HS256']);
 
 // Create token payload as a JSON string
-$payload = json_encode(['user_id' => $user_id, 'password' => $password]);
+$payload = json_encode(['username' => $username, 'password' => $password]);
 
 // Encode Header to Base64Url String
 $base64UrlHeader = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($header));
@@ -50,4 +50,4 @@ $base64UrlSignature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode
 // Create JWT
 $jwt = $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
 
-echo $jwt;
+echo json_encode($jwt);

@@ -136,17 +136,10 @@ class _DietPlanningState extends State<DietPlanning> {
                                           height: 5,
                                         ),
                                         Text(
-                                          "Calories:",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(fontSize: 14),
-                                        ),
-                                        SizedBox(
-                                          height: 12,
-                                        ),
-                                        Text(
                                           allDietPlans[index - 1]
-                                              .dailyCalorieGoal
-                                              .toString(),
+                                                  .dailyCalorieGoal
+                                                  .toString() +
+                                              " Cals",
                                           textAlign: TextAlign.center,
                                           style: TextStyle(fontSize: 14),
                                         ),

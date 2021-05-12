@@ -22,7 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   TextEditingController password = new TextEditingController();
   TextEditingController confirm = new TextEditingController();
-  static final validPassCharacters = RegExp(r'^[a-zA-Z0-9_\-=@,\.;]+$');
+  static final validPassCharacters = RegExp(r'^[a-zA-Z0-9_\-=@,\.;]+$!');
 
   TextEditingController phone = new TextEditingController();
   static final validPhoneCharacters = RegExp(r'^[0-9]');
@@ -128,11 +128,12 @@ class _SignUpPageState extends State<SignUpPage> {
                             validator: (String value) {
                               if (value.isEmpty) {
                                 return "Please enter your password.";
-                              } else if (!validPassCharacters.hasMatch(value)) {
+                              }
+                              /* else if (!validPassCharacters.hasMatch(value)) {
                                 return "Your password has unaccepted symbols.";
                               } else if (value.length > 20) {
                                 return "Your password is too long! Max length is 100 characters.";
-                              }
+                              }*/
                             },
                             obscureText: true,
                             decoration: InputDecoration(
@@ -148,11 +149,12 @@ class _SignUpPageState extends State<SignUpPage> {
                             validator: (String value) {
                               if (value.isEmpty) {
                                 return "Please enter your password.";
-                              } else if (!validPassCharacters.hasMatch(value)) {
+                              }
+                              /*else if (!validPassCharacters.hasMatch(value)) {
                                 return "Your password has unaccepted symbols.";
                               } else if (value != password.text) {
                                 return "Your passwords do not match.";
-                              }
+                              }*/
                             },
                             obscureText: true,
                             decoration: InputDecoration(
