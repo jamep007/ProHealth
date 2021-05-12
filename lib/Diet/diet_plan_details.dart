@@ -86,28 +86,28 @@ List<Widget> displayAllMeals(DietPlan plan) {
           ),
           Text("Breakfast Foods"),
           Column(
-            children: displayFoods(plan.dietPlan[i].listOfBreakfastFoods),
+            children: displayFoods(dietPlan.dietPlan[i].listOfBreakfastFoods),
           ),
           SizedBox(
             height: 5,
           ),
           Text("Lunch Foods"),
           Column(
-            children: displayFoods(plan.dietPlan[i].listOfLunchFoods),
+            children: displayFoods(dietPlan.dietPlan[i].listOfLunchFoods),
           ),
           SizedBox(
             height: 5,
           ),
           Text("Dinner Foods"),
           Column(
-            children: displayFoods(plan.dietPlan[i].listOfDinnerFoods),
+            children: displayFoods(dietPlan.dietPlan[i].listOfDinnerFoods),
           ),
           SizedBox(
             height: 5,
           ),
           Text("Snack Foods"),
           Column(
-            children: displayFoods(plan.dietPlan[i].listOfSnackFoods),
+            children: displayFoods(dietPlan.dietPlan[i].listOfSnackFoods),
           ),
           SizedBox(
             height: 5,
