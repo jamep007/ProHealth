@@ -13,7 +13,6 @@ class AddFoodPage extends StatefulWidget {
 }
 
 class _AddFoodPageState extends State<AddFoodPage> {
-  List<Food> foundFoods;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

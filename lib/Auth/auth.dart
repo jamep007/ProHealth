@@ -33,7 +33,7 @@ Future<int> addNewUser(String name, String username, String password,
     });
 
     var token = jsonDecode(response.body);
-    print(token);
+    //print(token);
 
     if (response.statusCode == 200) {
       responseCode = 2; //Passwords match & successfully submitted

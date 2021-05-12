@@ -15,7 +15,7 @@ class DietPage extends StatefulWidget {
 class _DietPageState extends State<DietPage> {
   int _currentIndex = 0;
 
-  final List<Widget> _list = [
+  final List<Widget> _pageBodyWidgets = [
     DietPlanning(),
     DietTracking(),
   ];
@@ -32,7 +32,7 @@ class _DietPageState extends State<DietPage> {
                     end: Alignment.centerRight,
                     colors: <Color>[Colors.lightBlue, Colors.blue])),
           )),
-      body: _list[_currentIndex],
+      body: _pageBodyWidgets[_currentIndex],
       drawer: AppDrawer(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
