@@ -2,26 +2,39 @@
 
 include "config.php";
 
+//Retrieve a username and password
 $username = mysqli_real_escape_string($connect, $_POST['username']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
 
-$queryResult = $connect->query("SELECT * FROM UserLogin"); //change your_table with your database table that you want to fetch values
+//Grabs all user login info to compare against
+$queryResult = $connect->query("SELECT * FROM userlogin;"); //change your_table with your database table that you want to fetch values
 
 $result = array();
 
+//Converts the query to an array
 while ($fetchdata = $queryResult->fetch_assoc()) {
     $result[] = $fetchdata;
-    echo $result;
+}
+
+//Looks for the next item in the array
+function get_next($array, $key)
+{
+    $currentKey = key($array);
+    while ($currentKey !== null && $currentKey != $key) {
+        next($array);
+        $currentKey = key($array);
+    }
+    return next($array);
 }
 
 //Checks array to see if the username and password checks out
 if (in_array($username, $result, TRUE)) {
-    if (next(array_search($username, $result, true)) == $password) {
+    if (get_next($result, array_search($username, $result, true)) == $password) {
         // Create token header as a JSON string
         $header = json_encode(['typ' => 'JWT', 'alg' => 'HS256']);
 
         // Create token payload as a JSON string
-        $payload = json_encode(['user_id' => $user_id, 'password' => $password]);
+        $payload = json_encode(['username' => $username, 'password' => $password]);
 
         // Encode Header to Base64Url String
         $base64UrlHeader = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($header));
@@ -38,6 +51,10 @@ if (in_array($username, $result, TRUE)) {
         // Create JWT
         $jwt = $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
 
-        echo $jwt;
+        echo json_encode($jwt);
+    } else {
+        die(json_encode("Error: Incorrect password"));
     }
+} else {
+    die(json_encode("Error: Either the user does not exist, or we cannot find the user in our database."));
 }

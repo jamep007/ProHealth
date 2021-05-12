@@ -22,7 +22,7 @@ WorkoutPlan newWorkoutPlan = WorkoutPlan.empty();
 class _ExercisePageState extends State<ExercisePage> {
   int _currentIndex = 0;
 
-  final List<Widget> _list = [
+  final List<Widget> _pageBodyWidgets = [
     ExercisePlanning(),
     ExerciseLogging(),
     ExerciseResources(),
@@ -46,7 +46,7 @@ class _ExercisePageState extends State<ExercisePage> {
             FocusScope.of(context).requestFocus(new FocusNode());
             if (submitted) submitted = !submitted;
           },
-          child: _list[_currentIndex]),
+          child: _pageBodyWidgets[_currentIndex]),
       floatingActionButton: _currentIndex == 0
           ? FloatingActionButton(
               onPressed: () {

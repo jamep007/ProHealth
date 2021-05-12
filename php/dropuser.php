@@ -10,7 +10,7 @@ $query = "DELETE FROM users
 $results = mysqli_query($connect, $query);
 
 if (!$results = 0) {
-    echo "User dropped successfully.";
+    echo json_encode("User dropped successfully.");
 } else if ($results = 0) {
-    echo "<br>The query failed.";
+    echo json_encode("The query failed.");
 }

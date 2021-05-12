@@ -22,7 +22,8 @@ Future<int> addNewUser(String name, String username, String password,
     String _userId = rand.toString();
 
     //Send data to sql
-    final response = await http.post("https://website-to-add-user.php", body: {
+    final response = await http
+        .post("http://DESKTOP-4KOSN6V/ProHealth%20PHP/insertuser.php", body: {
       "name": name,
       "user_id": _userId,
       "username": username,
@@ -32,6 +33,7 @@ Future<int> addNewUser(String name, String username, String password,
     });
 
     var token = jsonDecode(response.body);
+    print(token);
 
     if (response.statusCode == 200) {
       responseCode = 2; //Passwords match & successfully submitted
@@ -52,7 +54,8 @@ Future<int> addNewUser(String name, String username, String password,
 Future<int> userTryLogin(String username, String password) async {
   int responseCode;
   //Send data to sql
-  final response = await http.post("https://website-to-add-user.php", body: {
+  final response = await http
+      .post("http://DESKTOP-4KOSN6V/ProHealth%20PHP/login.php", body: {
     "username": username,
     "password": password,
   });
@@ -61,6 +64,7 @@ Future<int> userTryLogin(String username, String password) async {
   var token = jsonDecode(response.body);
 
   //Check status code
+  responseCode = response.statusCode;
   if (response.statusCode == 200) {
     print(response.statusCode);
   } else {

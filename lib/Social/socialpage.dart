@@ -20,7 +20,7 @@ class _SocialPageState extends State<SocialPage> {
 
   final List<Widget> _pageTabs = [
     ViewMessages(),
-    Posts(),
+    ViewPosts(),
   ];
 
   @override

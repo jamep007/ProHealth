@@ -1,7 +1,7 @@
 <?php
 
-$username = "id16094632_prohealthadmin";
-$password = "-]nE3m5L-xaKaW>@";
+$username = "root";
+$password = "";
 $host = "localhost";
 $db_name = "id16094632_prohealthdb";
 

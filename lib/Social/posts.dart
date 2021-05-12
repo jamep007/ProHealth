@@ -4,12 +4,12 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Posts extends StatefulWidget {
+class ViewPosts extends StatefulWidget {
   @override
-  _PostsState createState() => _PostsState();
+  _ViewPostsState createState() => _ViewPostsState();
 }
 
-class _PostsState extends State<Posts> {
+class _ViewPostsState extends State<ViewPosts> {
   // Temporary lists. Actual list comes form database.
   List _users = ['User 1', 'User 2', 'User 3'];
   List _posts = [

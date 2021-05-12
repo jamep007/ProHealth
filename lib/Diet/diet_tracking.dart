@@ -131,6 +131,15 @@ class _DietTrackingState extends State<DietTracking> {
       listOfDinnerFoods = [],
       listOfSnackFoods = [];
 
+  Future<List<Branded>> getFoodLogs() async {
+    final response = await http
+        .get("http://DESKTOP-4KOSN6V/ProHealth%20PHP/retrieveFoodLogs.php");
+    List<Branded> loggedFoods = (json.decode(response.body) as List)
+        .map((i) => Branded.fromJson(i))
+        .toList();
+    return loggedFoods;
+  }
+
   double getRatio(calories, goal) {
     double progress;
     if (calories == 0) {
