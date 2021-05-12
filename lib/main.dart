@@ -11,7 +11,6 @@ import 'package:senior_project_swauhealthapp/Profile/profilepage.dart';
 import 'package:senior_project_swauhealthapp/Social/socialpage.dart';
 import 'package:senior_project_swauhealthapp/Exercise/exercisepage.dart';
 import 'package:senior_project_swauhealthapp/Diet/dietpage.dart';
-import 'package:senior_project_swauhealthapp/Sleep/sleeppage.dart';
 import 'package:senior_project_swauhealthapp/MentalHealth/mhealthpage.dart';
 
 void main() => runApp(new MyApp());
@@ -36,7 +35,6 @@ class MyApp extends StatelessWidget {
         "/exercise": (BuildContext context) => new ExercisePage(),
         "/diet": (BuildContext context) => new DietPage(),
         "/addfood": (BuildContext context) => new AddFoodPage(),
-        "/sleep": (BuildContext context) => new SleepPage(),
         "/mhealth": (BuildContext context) => new MHealthPage(),
       },
     );

@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:senior_project_swauhealthapp/appdrawer.dart';
 import 'package:senior_project_swauhealthapp/Diet/diet_model.dart';
+import 'package:senior_project_swauhealthapp/Diet/add_food.dart';
 
 class DietTracking extends StatefulWidget {
   @override
@@ -125,7 +126,7 @@ class _DietTrackingState extends State<DietTracking> {
 
   int calories = 0, goal = 2000, netCal;
   double _progressRatio;
-  List<Food> listOfBreakfastFoods = [],
+  List<Branded> listOfBreakfastFoods = [],
       listOfLunchFoods = [],
       listOfDinnerFoods = [],
       listOfSnackFoods = [];
@@ -135,11 +136,11 @@ class _DietTrackingState extends State<DietTracking> {
     if (calories == 0) {
       progress = .01;
     } else if (calories < goal) {
-      progress = goal / calories;
+      progress = calories / goal;
     } else if (calories == goal) {
       progress = 1;
     } else if (calories > goal) {
-      progress = calories / goal;
+      progress = ((goal - (calories - goal)) / goal);
     }
     return progress;
   }
@@ -486,7 +487,14 @@ class _DietTrackingState extends State<DietTracking> {
                       children: [
                         FlatButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamed("/addfood");
+                              _getFoodFromSecondScreen(context)
+                                  .then((Branded result) {
+                                setState(() {
+                                  if (result.foodName != null)
+                                    listOfBreakfastFoods.add(result);
+                                  calories += result.nfCalories;
+                                });
+                              });
                             },
                             color: Colors.lightBlue,
                             shape: RoundedRectangleBorder(
@@ -557,7 +565,14 @@ class _DietTrackingState extends State<DietTracking> {
                       children: [
                         FlatButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamed("/addfood");
+                              _getFoodFromSecondScreen(context)
+                                  .then((Branded result) {
+                                setState(() {
+                                  if (result.foodName != null)
+                                    listOfLunchFoods.add(result);
+                                  calories += result.nfCalories;
+                                });
+                              });
                             },
                             color: Colors.lightBlue,
                             shape: RoundedRectangleBorder(
@@ -626,7 +641,14 @@ class _DietTrackingState extends State<DietTracking> {
                       children: [
                         FlatButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamed("/addfood");
+                              _getFoodFromSecondScreen(context)
+                                  .then((Branded result) {
+                                setState(() {
+                                  if (result.foodName != null)
+                                    listOfDinnerFoods.add(result);
+                                  calories += result.nfCalories;
+                                });
+                              });
                             },
                             color: Colors.lightBlue,
                             shape: RoundedRectangleBorder(
@@ -695,7 +717,14 @@ class _DietTrackingState extends State<DietTracking> {
                       children: [
                         FlatButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamed("/addfood");
+                              _getFoodFromSecondScreen(context)
+                                  .then((Branded result) {
+                                setState(() {
+                                  if (result.foodName != null)
+                                    listOfSnackFoods.add(result);
+                                  calories += result.nfCalories;
+                                });
+                              });
                             },
                             color: Colors.lightBlue,
                             shape: RoundedRectangleBorder(
@@ -715,10 +744,28 @@ class _DietTrackingState extends State<DietTracking> {
     );
   }
 
-  List<Widget> foodList(BuildContext context, List<Food> list) {
-    List<Widget> listOfWidgets;
+  Future<Branded> _getFoodFromSecondScreen(BuildContext context) async {
+    final dataFromSecondPage = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AddFoodPage()),
+    ) as Branded;
+    Branded data = Branded(
+        foodName: dataFromSecondPage.foodName,
+        servingUnit: dataFromSecondPage.servingUnit,
+        servingQty: dataFromSecondPage.servingQty,
+        nfCalories: dataFromSecondPage.nfCalories);
+    return data;
+  }
+
+  List<Widget> foodList(BuildContext context, List<Branded> list) {
+    List<Widget> listOfWidgets = [];
     for (int i = 0; i < list.length; i++) {
-      listOfWidgets.add(Container());
+      listOfWidgets.add(ListTile(
+        title: Text(list[i].foodName),
+        subtitle:
+            Text(list[i].servingQty.toString() + " " + list[i].servingUnit),
+        trailing: Text("Calories: " + list[i].nfCalories.toString()),
+      ));
     }
     return listOfWidgets;
   }
