@@ -2,7 +2,7 @@
 
 ## As of 5/16/21, if you want to run these files, you must:
 
-- Download and install flutter. Make sure your PATH variable is set properly.
+- Download and install flutter. Make sure your PATH variable is set properly. (More details outlined at: https://flutter.dev/docs/get-started/install)
 - Download and install Android Studio. (Optional: Also install Visual Studio Code.)
 - Install the Dart and Flutter plugins in Android Studio. (Optional: Do the same with VS Code.)
 - Run the command flutter doctor. Fulfill all requirements.
