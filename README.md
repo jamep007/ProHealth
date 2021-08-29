@@ -22,5 +22,3 @@
 - Check out what we have for the app so far!
 
 Understand that we will have a more permanent solution to hosting the database and API. Once that solution is fully implemented, you must change the URLs from senior_project_prohealth\lib\Auth\auth.dart (lines 26 and 58 as of 5/16/21).
-
-Also, understand that the app will be going through many changes, so make sure you keep update to the latest release (once we start officially releasing the app). You can do that from: https://github.com/jamep007/ProHealth/releases. The github repository is private for now, but will be made public when we create an official release.
